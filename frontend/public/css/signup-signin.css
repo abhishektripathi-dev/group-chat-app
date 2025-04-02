@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #faebd7;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    /* box-sizing: border-box; */
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.container input:focus {
+    border-color: #edac57;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 128, 128, 0.5);
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    background-color: #edac57;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #e99e3c;
+}
+
+.container .link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.container .link a {
+    color: #b66700;
+    text-decoration: none;
+}
+
+.container .link a:hover {
+    text-decoration: underline;
+}
+
+/* for password toggle */
+
+.password-container{
+    position: relative;
+}
+
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}
