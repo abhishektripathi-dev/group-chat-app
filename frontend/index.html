@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #chat-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        #messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            background: #f9f9f9;
+        }
+        .message {
+            background: #ccc;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+        #input-container {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #1f4b66;
+            padding: 10px;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        #send-button {
+            padding: 10px 15px;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat App</h1>
+    <div id="chat-container">
+        <div id="messages"></div>
+    </div>
+    <div id="input-container">
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+    <script>
+        const messagesDiv = document.getElementById('messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        function appendMessage(text) {
+            const message = document.createElement('div');
+            message.classList.add('message');
+            message.textContent = text;
+            messagesDiv.appendChild(message);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                appendMessage(`You: ${message}`);
+                axios.post('http://localhost:3000/send-message', { message })
+                    .then(response => console.log(response.data))
+                    .catch(error => console.error('Error sending message:', error));
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
