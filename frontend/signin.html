@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ChitChat</title>
+        <link rel="stylesheet" href="./public/css/signup-signin.css" />
+        <link rel="icon" href="./assest/images/icon.png" type="image/png">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Sign In</h2>
+            <form action="" id="signinForm">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                />
+
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <span id="tooglePassword" class="password-toggle">👁️</span>
+                </div>
+                <button type="submit">Sign In</button>
+
+                <div class="link">
+                    <p>
+                        Don't have an account?
+                        <a href="./signup.html">Sign Up</a>
+                    </p>
+                    <p>
+                        <a href="#" id="forgotPasswordLink">Forgot Password</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./public/js/signin.js"></script>
+        <script src="./public/js/togglePassword.js"></script>
+        <script src="./public/js/forgotPassword.js"></script>
+    </body>
+</html>

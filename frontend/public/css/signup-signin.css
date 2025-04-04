@@ -81,13 +81,18 @@ body {
 .password-toggle {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 2px;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     color: #888;
+    background-color: #edac57;
+    padding: 5px 8px;
+    color: white;
 }
-
+.password-toggle:hover {
+    background-color: #e99e3c;
+}
 /* Media Queries */
 
 @media (max-width: 768px) {
