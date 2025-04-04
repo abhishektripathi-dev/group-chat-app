@@ -14,7 +14,10 @@ signinForm.addEventListener("submit", async (event) => {
             password,
         });
         if (response.status === 200) {
-            alert(response.data.message ||"Login successfullty!");
+            // alert(response.data.message ||"Login successfullty!");
+            const { message, token } = response.data;
+            localStorage.setItem("token", token);
+            console.log(message);
         }
     } catch (error) {
         alert(

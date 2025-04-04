@@ -1,7 +1,8 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
-const jwt = require("jsonwebtoken");
 const { Sequelize } = require("sequelize");
+
+
 
 require("dotenv").config({ path: "../.env" });
 
@@ -50,8 +51,11 @@ exports.signin = async (req, res) => {
             return res.status(401).json({ message: "User not authorized" });
         }
 
+        const generateJWToken = require("../utils/generateWebToken").generateJWToken;
+
         res.status(200).json({
             message: "User login successful",
+            token: generateJWToken(user.id, user.email),
         });
     } catch (error) {
         console.error("Error logging in:", error);
