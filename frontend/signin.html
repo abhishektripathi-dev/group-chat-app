@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ChitChat</title>
         <link rel="stylesheet" href="./public/css/signup-signin.css" />
+        <link rel="stylesheet" href="./public/css/forgotPassword-modal.css">
         <link rel="icon" href="./assest/images/icon.png" type="image/png">
     </head>
     <body>
@@ -37,9 +38,21 @@
             </form>
         </div>
 
+        <!-- Forgot Passowrd Model -->
+         <div id="forgotPasswordModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Forgot Password</h3>
+                <form action="" id="forgotPasswordForm">
+                    <input type="email" name="forgotEmail" id="forgotEmail" placeholder="Email" required>
+                    <button id="closeModal">Close</button>
+                </form>
+            </div>
+         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./public/js/signin.js"></script>
         <script src="./public/js/togglePassword.js"></script>
+        <script src="./public/js/forgotPassword.js"></script>
         <script src="./public/js/forgotPassword.js"></script>
     </body>
 </html>
